@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS `Apod`
+CREATE TABLE IF NOT EXISTS `${TABLE_NAME}`
 (
     `apod_id`     INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
     `date`        INTEGER                           NOT NULL,
