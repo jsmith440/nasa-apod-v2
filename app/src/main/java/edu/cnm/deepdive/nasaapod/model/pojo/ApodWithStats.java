@@ -1,5 +1,7 @@
 package edu.cnm.deepdive.nasaapod.model.pojo;
 
+import android.annotation.SuppressLint;
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Embedded;
 import edu.cnm.deepdive.nasaapod.model.entity.Apod;
@@ -9,6 +11,10 @@ public class ApodWithStats {
 
   @Embedded
   private Apod apod;
+
+  private Date lastAccess;
+
+  private int accessCount;
 
   public Apod getApod() {
     return apod;
@@ -32,6 +38,15 @@ public class ApodWithStats {
 
   public void setAccessCount(int accessCount) {
     this.accessCount = accessCount;
+  }
+
+  @SuppressLint("DefaultLocale")
+  @NonNull
+  @Override
+  public String toString() {
+    return String.format("%s (%s); last accessed = %s; access count = %d",
+        apod.getTitle(), apod.getMediaType(), lastAccess, accessCount);
+  }
   }
 
 }
