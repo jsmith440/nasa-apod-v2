@@ -36,7 +36,7 @@
     android:layout_height="wrap_content"
     android:src="@drawable/ic_today"
     app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintBottom_toTopOf="@id/nav_view"
     android:layout_margin="16dp"/>
 
   <ProgressBar

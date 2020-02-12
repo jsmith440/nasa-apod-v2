@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
     loading = findViewById(R.id.loading);
     setupNavigation();
     setupViewModel();
-    setupCalendarPicker(Calendar.getInstance());
+    setupCalendarPicker();
   }
 
   private void setupViewModel() {
@@ -64,7 +64,8 @@ public class MainActivity extends AppCompatActivity {
     loading.setVisibility(visibility);
   }
 
-  private void setupCalendarPicker(Calendar calendar) {
+  private void setupCalendarPicker() {
+    calendar = Calendar.getInstance();
     calendarFab = findViewById(R.id.calendar_fab);
     calendarFab.setOnClickListener((v) -> {
       DateTimePickerFragment fragment = new DateTimePickerFragment();
