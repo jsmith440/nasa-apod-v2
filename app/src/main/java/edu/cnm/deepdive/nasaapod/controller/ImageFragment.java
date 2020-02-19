@@ -108,7 +108,7 @@ public class ImageFragment extends Fragment {
       public void onPageFinished(WebView view, String url) {
         ((MainActivity) getActivity()).setProgressVisibility(View.GONE);
         Toast toast = Toast.makeText(getActivity(), apod.getTitle(), Toast.LENGTH_LONG);
-        toast.setGravity(Gravity.BOTTOM, 0, (int) getContext().getResources()
+        toast.setGravity(Gravity.BOTTOM, 0, getContext().getResources()
             .getDimensionPixelOffset(R.dimen.toast_vertical_margin));
         toast.show();
       }

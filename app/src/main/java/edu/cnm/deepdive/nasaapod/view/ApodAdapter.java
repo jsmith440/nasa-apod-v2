@@ -20,6 +20,7 @@ import java.util.List;
 public class ApodAdapter extends ArrayAdapter<ApodWithStats> {
 
   private final OnClickListener listener;
+
   public ApodAdapter(@NonNull Context context, @NonNull List<ApodWithStats> apods,
       OnClickListener listener) {
     super(context, R.layout.item_apod, apods);
@@ -52,16 +53,11 @@ public class ApodAdapter extends ArrayAdapter<ApodWithStats> {
       thumbnail.setImageResource(R.drawable.ic_slow_motion_video);
     }
     thumbnail.setContentDescription(apod.getApod().getTitle());
-    view.setOnClickListener((v) -> listener.onClick(v,apod.getApod(), position));
+    view.setOnClickListener((v) -> listener.onClick(v, apod.getApod(), position));
     return view;
   }
 
-  public interface OnClickListener {
-
-    void onClick(View v, Apod apod, int position);
-
-  }
-
+  @FunctionalInterface
   public interface OnClickListener {
 
     void onClick(View view, Apod apod, int position);
